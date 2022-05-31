@@ -7,4 +7,4 @@ It also has the feature to create a list of processes that can all be killed sim
 it's curently still unfinnshed but completed enough to be published
 
 # installation instruction
-
+sudo curl -sL https://github.com/TommiRommi/ekill/blob/main/ekill -o /usr/local/bin/ekill && sudo chmod +x /usr/local/bin/ekill

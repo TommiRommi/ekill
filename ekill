@@ -15,14 +15,14 @@ OPTIONS:
   (-k | --kill)
       ${0##*/} -k|--kill [kill signal -* (optional)] [name of process]
       this allows you to kill a process just by typing in it's name.
-      you can also choose to send a custom kill signal as the default on is -9
+      you can also choose to send a custom kill signal as the default one is -9
   (-m | --make-list)
       ${0##*/} -m|--make-list [make|list|clear|cam]
       this allows you to make a custom list of process names that will be saved in a log file
       you can then run -u|--use-list to kill all of the processes on the list
   (-u | --use-list)
       ${0##*/} -u|--use-list
-      this is a extention of the make list command that allows you to kill of the processes
+      this is a extention of the make list command that allows you to kill all of the processes
       listed in the log file
   (-h | --help)
       ${0##*/} -h|--help

@@ -2,7 +2,7 @@
 procnum=0
 nocolor="\033[0m"
 opsel=$(echo -e "$1" | cut -c 1)
-killdef=-9 ; spectext=killed ; version="0.6"
+killdef=-9 ; spectext=killed ; version="0.6.5"
 dir=$HOME
 
 help_text () {
@@ -123,12 +123,16 @@ done
 }
 
 stop_resume () {
-  kill $killdef $p1 2>/dev/null && ((procnum++))
-  if [ $procnum -ge 1 ]; then
-    echo -e "\033[1;32m${procnum}: processes succsessfuly $spectext\t($proc) PID $p1 $nocolor"; exit 0
-  else
+  for p1 in $(pidof $proc); do
+ 	  kill $killdef $p1 2>/dev/null && ((procnum++))
+  	if [ $procnum -gt 1 ]; then
+    	echo -e "\033[1;32m${procnum}: processes succsessfuly $spectext\t($proc) PID $p1 $nocolor";
+  	fi
+  done
+  if [ $procnum = 0 ]; then
     echo -e "\033[1;34mno processes where detected$nocolor" ; exit 1
   fi
+    exit 0
 }
 
 make_list () {

@@ -3,7 +3,7 @@ procnum=0
 nocolor="\033[0m"
 opsel=$(echo -e "$1" | cut -c 1)
 killdef=-9 ; spectext=killed ; version="0.6.5"
-dir=$HOME
+dir=$HOME/.config/
 
 help_text () {
 while IFS= read -r line; do
